@@ -1,17 +1,17 @@
 
 import React from 'react'
+import { Routes, Route, Navigate } from 'react-router-dom'
+import Home from './pages/Home'
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 
 export default function App() {
   return (
-    <div style={{
-      display: 'flex',
-      height: '100vh',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'sans-serif',
-      fontSize: '2rem'
-    }}>
-      FV Studios Dashboard está rodando!
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Navigate to="/" />} />
+    </Routes>
   )
 }
